@@ -1,0 +1,411 @@
+%------------------------------------------------------------------------------
+% CV in Latex
+% Author : Charles Rambo
+% Based off of: https://github.com/sb2nov/resume and Jake's Resume on Overleaf
+% Most recently updated version may be found at https://github.com/fizixmastr 
+% License : MIT
+%------------------------------------------------------------------------------
+
+\documentclass[A4,11pt]{article}
+%\documentclass[letterpaper,11pt]{article} %For use in US
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+% Load the etoolbox package
+\usepackage{etoolbox}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{tikz}
+\input{glyphtounicode}
+
+\begin{comment}
+I am by no means a professional when it comes to the CV's/resumes, I have
+received various trainings on how to write a CV and resume from my high 
+school, as well as the Austin College and University of Eastern Finland's
+career counseling departments. As I intend to share my CV as a template, I 
+feel that it is my responsibility to provide explanations of my work.
+\end{comment}
+
+
+%-----FONT OPTIONS-------------------------------------------------------------
+\begin{comment}
+The font of the document will impact not just how readable it is, but how it is
+perceived. In the "The Craft of Scientific Writing" by Michael Alley, shares a
+common fonts for publication as well as their use. I have chosen to use
+Palatino for its legibility, some others are given below. There is far too much
+about typography to discus here. Note: serif fonts have short projecting
+strokes, sans-serif fonts are sans (without) these strokes.
+\end{comment}
+
+
+% serif
+%  \usepackage{palatino}
+% \usepackage{times} %This is the default as well
+% \usepackage{charter}
+
+% sans-serif
+% \usepackage{helvet}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+\pagestyle{fancy}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{hyphenat}
+\usepackage{fontawesome}
+\input{glyphtounicode}
+
+%-----PAGE SETUP---------------------------------------------------------------
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-1cm}
+\addtolength{\evensidemargin}{-1cm}
+\addtolength{\textwidth}{2cm}
+\addtolength{\topmargin}{-1cm}
+\addtolength{\textheight}{2cm}
+
+% Margins for US Letter size
+%\addtolength{\oddsidemargin}{-0.5in}
+%\addtolength{\evensidemargin}{-0.5in}
+%\addtolength{\textwidth}{1in}
+%\addtolength{\topmargin}{-.5in}
+%\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0cm}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that .pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-----CUSTOM COMMANDS FOR FORMATTING SECTIONS----------------------------------
+\newcommand{\CVItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\CVSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \small#3 & \small #4 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\CVSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \text{\small#1} & \text{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\CVSubItem}[1]{\CVItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\CVSubHeadingListStart}{\begin{itemize}[leftmargin=0.5cm, label={}]}
+% \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]} % Uncomment for US
+\newcommand{\CVSubHeadingListEnd}{\end{itemize}}
+\newcommand{\CVItemListStart}{\begin{itemize}}
+\newcommand{\CVItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%------------------------------------------------------------------------------
+% CV STARTS HERE  %
+%------------------------------------------------------------------------------
+\begin{document}
+
+%-----HEADING------------------------------------------------------------------
+\begin{comment}
+In Europe it is common to include a picture of ones self in the CV. Select
+which heading appropriate for the document you are creating.
+\end{comment}
+
+\begin{minipage}[c]{0.05\textwidth}
+\-\
+\end{minipage}
+
+\begin{minipage}[c]{0.3\textwidth}
+\begin{tikzpicture}
+    \clip (0,0) circle (3cm);
+    \node at (-2,-0.5) {\includegraphics[width = 4cm]{photo}}; 
+    % if necessary the picture may be moved by changing the at (coordinates)
+    % width defines the 'zoom' of the picture
+\end{tikzpicture}
+\hfill\vline\hfill
+\end{minipage}
+\begin{minipage}[c]{0.6\textwidth}
+    \textbf{\Huge \scshape{Ramtin BeheshtAeen}} \vspace{1pt} 
+    
+    \faAt \hspace{.1pt} \href{mailto:ramtinba145822@gmail.com}{ramtinba145822@gmail.com}
+
+    \faLinkedinSquare \hspace{.5pt} \href{https://www.linkedin.com/}{Ramtin BeheshtAeen}
+
+    \faGithub \hspace{.5pt} \href{https://github.com/}{Ramtin-BeheshtAeen}
+
+%     \faGlobe \hspace{.5pt} \href{}{Portfolio}
+    
+    \faMobile \hspace{.5pt} \href{tel:989176003598}{+98 917 600 3598}
+
+\end{minipage}
+
+% Without picture
+%\begin{center}
+%    \textbf{\Huge \scshape Charles Rambo} \\ \vspace{1pt} %\scshape sets small capital letters, remove if desired
+%    \small +1 123-456-7890 $|$ 
+%    \href{mailto:you@provider.com}{\underline{you@provider.com}} $|$\\
+%    % Be sure to use a professional *personal* email address
+%    \href{https://linkedin.com/in/your-name-here}{\underline{linkedin.com/in/charles-rambo}} $|$
+%    % you should adjust you linked in profile name to be professional and recognizable
+%    \href{https://github.com/fizixmastr}{\underline{github.com/fizixmastr}}
+%\end{center}
+
+
+
+\begin{comment}
+This CV was written for specifically for positions I was applying for in
+academia, and then modified to be a template.
+
+A standard CV is about two pages long where as a resume in the US is one page.
+sections can be added and removed here with this in mind. In my experience, 
+education, and applicable work experience and skills are the most import things
+to include on a resume. For a CV the Europass CV suggests the categories: Work
+Experience, Education and Training, Language Skills, Digital Skills,
+Communication and Interpersonal Skills, Conferences and Seminars, Creative Works
+Driver's License, Hobbies and Interests, Honors and Awards, Management and
+Leadership Skills, Networks and Memberships, Organizational Skills, Projects,
+Publications, Recommendations, Social and Political Activities, Volunteering.
+
+Your goal is to convey a who, what , when, where, why for every item you share. 
+The who is obviously you, but I believe the rest should be done in that order.
+For example below. An employer cares most about the degree held and typically 
+less about the institution or where it is located (This is still good 
+information though). Whatever order you choose be consistent throughout.
+\end{comment}
+
+%-----EDUCATION----------------------------------------------------------------
+\section{Ausbildung}
+  \CVSubHeadingListStart
+%    \CVSubheading % Example
+%      {Degree Achieved}{Years of Study}
+%      {Institution of Study}{Where it is located}
+    \CVSubheading
+      {{II.gymnasialen Oberstufe(Abetur) $|$ \emph{\small{Gesamtdurchschnittsnote(0-20): 18.51}}}}{2017 -- 2020}
+      {Theoretischer Bildungszweig- Fachrichtung Mathematik und Physics}{Iran, Shiraz, OlomPezeshki}
+  \CVSubHeadingListEnd
+
+%-----Language----------------------------------------------------------------
+\section{Sprachen}
+ \CVSubHeadingListStart
+%    \CVSubheading % Example
+%      {Degree Achieved}{Years of Study}
+%      {Institution of Study}{Where it is located}
+    \CVSubheading
+      {Deutsch $|$ \emph{\small{B2}}}{2023}
+      {ÖSD  Prüfung}{B1}
+     \CVSubheading
+      {Englisch $|$ \emph{\small{C1}}} {2021}
+      {IELTs}{7}
+     \CVSubheading
+      {Persisch  $|$ \emph{\small{Muttersprache}}} {}
+      {}{}
+ \CVSubHeadingListEnd
+
+
+% %-----HONORS AND AWARDS--------------------------------------------------------
+% \section{Honors and Awards}
+%   \CVSubHeadingListStart
+% %    \CVSubheading %Example
+% %      {What}{When}
+% %      {Short Description}{}
+%     \CVSubheading
+%       {Investigating of the internal and external factors which affecting plasma formation}{2018}
+%       {5th in Iran(all feilds) 1th in Iran(physics major)}{Appendix1}
+%     \CVSubheading
+%      {Construction of electrostatic chamber and investigation of parameters and shapes of plasma  in different designs and shapes of chamber and internal network}{2020}
+%       {This invention ranked first (gold medal) in international competition which held in Iran}{Appendix2}
+% %     \CVSubheading
+% %       {Construction of current plasma reactor with microwaves to produce carbon monoxide\\
+% %       inorder to synthesize biofuels}{2020}
+% %       {This invention ranked first (gold medal) in international competition which held in Turkey}{Appendix3}
+%   \CVSubHeadingListEnd
+%-----HONORS AND AWARDS--------------------------------------------------------
+\section{Auszeichnungen und Preise}
+  \CVSubHeadingListStart
+
+    \CVSubheading
+      {Investigating of the internal and external factors which affecting plasma formation}{2018}
+      {5. in Iran (alle Bereiche) 1. in Iran (Physikfach)}{Anhang1}\vspace{0.4cm}
+    \CVSubheading
+     {\shortstack[0]{Construction of electrostatic chamber and investigation of parameters  
+     and shapes \\ of plasma in different designs and shapes of chamber and internal network}}{2020}
+      {Die Erfindung gewann einen internationalen Wettbewerb in dem Iran und erhielt eine Goldmedaille.
+}{Anhang2}\vspace{0.4cm}
+      
+      \CVSubheading
+     {\shortstack[2]{Construction of current plasma reactor with microwaves to produce \\ carbon monoxide  inorder to synthesize biofuels}}{2020}
+      {Die Erfindung gewann einen internationalen Wettbewerb in der Türkei und erhielt eine Goldmedaille.
+}{Anhang3}
+  \CVSubHeadingListEnd
+
+
+% Reduce the spacing before and after the subheadings by half
+% \patchcmd{\CVSubheading}{1.5ex}{0.75ex}{}{}
+% \patchcmd{\CVSubheading}{1.5ex}{0.75ex}{}{}
+
+%----CERTIFICATES----------------------------------------------------
+\section{Zertifikate}
+  \CVSubHeadingListStart
+%    \CVSubheading %Example
+%      {What you did}{When you worked there}
+%      {Who you worked for}{Where they are located}
+    \CVSubheading
+      {Comprehensive School of Artificial Intelligence, Python and Data Mining}{In Progress}
+      {}{}
+    \CVSubheading
+      {Linux Server Professional (LPIC-1)}{Anhang4}
+      {}{}
+    \CVSubheading
+      {Excel Basics}{Anhang5}
+      {}{}
+    \CVSubheading
+      {Network Principles}{Anhang6}
+      {}{}
+  \CVSubHeadingListEnd
+
+%-----WORK EXPERIENCE----------------------------------------------------------
+\begin{comment}
+try to briefly explain what you did and why it is relevant to the position you
+are seeking
+\end{comment}
+
+\section{Berufserfahrung}
+  \CVSubHeadingListStart
+%    \CVSubheading %Example
+%      {What you did}{When you worked there}
+%      {Who you worked for}{Where they are located}
+%      \CVItemListStart
+%        \CVItem{Why it is important to this employer}
+%      \CVItemListEnd
+    \CVSubheading
+      {Parse Druckservice}{Dez. 2022 -- Mai. 2023}
+      {Iran Shiraz}{}
+      \CVItemListStart
+        \CVItem{Bilder mit Photoshop bearbeitet, verkleinert und verbessert}
+        \CVItem{Netzwerke für PCs und Drucker konfiguriert und gewartet}
+        \CVItem{Verschiedene Arten von Druckern bedient, wie z.B. Tintenstrahl-, Laser- und Thermosublimationsdrucker}
+      \CVItemListEnd
+  \CVSubHeadingListEnd
+
+%-----SKILLS-------------------------------------------------------------------
+\begin{comment}
+This section is compressed from the various skills sections that Euro CV
+recommends.
+\end{comment}
+
+\section{Kenntnisse und Fähigkeiten}
+   \CVSubHeadingListStart
+   
+   \CVSubheading
+     {Programmierung}{}
+     {Python}{}
+      \CVItemListStart
+        \CVItem{Python Scripting $|$ Web Scrapping }
+        \CVItemListStart
+          \CVItem{Beautiful Soup}
+          \CVItem{Selenium}
+         \CVItemListEnd
+          
+        \CVItem{DOM Manipulation}
+        \CVItem{jQuery}
+        \CVItem{Bootstrap 4}
+        \CVItemListEnd
+   
+   
+     \CVSubheading
+     {Programmierung}{}
+     {Web Entwicklung}{Front End}
+      \CVItemListStart
+        \CVItem{HTML 5 $|$ CSS 3 $|$ Javascript ES6}
+        \CVItem{DOM Manipulation}
+        \CVItem{jQuery}
+        \CVItem{Bootstrap 4}
+        \CVItemListEnd
+        
+     \CVSubheading
+     {Programmierung}{}
+     {Web Entwicklung}{Back End}
+      \CVItemListStart
+        \CVItem{Node.js $|$ NPM $|$ Express.js}
+        \CVItem{DOM Manipulation}
+        \CVItem{RESTful API}
+         \CVItemListEnd
+         
+     \CVSubheading
+     {Datenbanken}{}
+     {SQL/ NoSQL}{}
+      \CVItemListStart
+        \CVItem{SQL}
+        \CVItem{MongoDB}
+        \CVItem{Mongoose}
+         \CVItemListEnd
+         
+     \CVSubheading
+     {JavaScript Libraries}{}
+     {React}{}
+     \CVSubHeadingListEnd
+
+
+
+
+
+
+
+
+% Authentication
+% Firebase
+% React.js
+% React Hooks
+% Web Design
+
+
+     
+    
+%-----COMMUNITY INVOLVEMENT----------------------------------------------------
+\section{Ehrenamtliches Engagement}
+  \CVSubHeadingListStart
+%    \CVSubheading %Example
+%      {What you did}{When you worked there}
+%      {Who you worked for}{Where they are located}
+    \CVSubheading
+      {Ich habe ein Team gegründet, das sich mit Plasmaphysik beschäftigt}{}
+      {Wir haben verschiedene Experimente zu diesem Thema durchgeführt.}{}
+%     \CVSubheading
+%       {Gründung eines Teams für die Verbindung von Ideen im  Zusammenhang mit der Space Research & Technology}{}
+%       {ASTRO}{}
+    \CVSubheading
+      {Gründung einer Amateur-Geologiegruppe mit Schulfreunden}{}
+      {}{}
+  \CVSubHeadingListEnd
+%------------------------------------------------------------------------------
+\end{document}
